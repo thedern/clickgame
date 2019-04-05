@@ -1,0 +1,13 @@
+/* bootstrap override clases */
+body {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.banner {
+  background: #333;
+}
+
+.scores-text {
+  font-size: 40px;
+  font-weight: 500;
+}

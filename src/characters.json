@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Mr Burns",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/16.jpg"
+  },
+  {
+    "name": "Homer Simpson",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/1.jpg"
+  },
+  {
+    "name": "Moe Szyslak",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/20.jpg"
+  },
+  {
+    "name": "Mayor Quimby",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/119.jpg"
+  },
+  {
+    "name": "Dr Hibbert",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/144.jpg"
+  },
+  {
+    "name": "Maggie",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/5.jpg"
+  },
+  {
+    "name": "Goof",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/128.jpg"
+  },
+  {
+    "name": "Young Abe",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/155.jpg"
+  },
+  {
+    "name": "mystery",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/72.jpg"
+  }
+]
