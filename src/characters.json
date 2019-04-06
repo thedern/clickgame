@@ -1,38 +1,47 @@
 [
   {
-    "name": "Mr Burns",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/16.jpg"
+    "name": "MrBurns",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/16.jpg",
+    "isClicked": false
   },
   {
-    "name": "Homer Simpson",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/1.jpg"
+    "name": "HomerSimpson",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/1.jpg",
+    "isClicked": false
   },
   {
-    "name": "Moe Szyslak",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/20.jpg"
+    "name": "MoeSzyslak",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/20.jpg",
+    "isClicked": false
   },
   {
-    "name": "Mayor Quimby",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/119.jpg"
+    "name": "MayorQuimby",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/119.jpg",
+    "isClicked": false
   },
   {
-    "name": "Dr Hibbert",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/144.jpg"
+    "name": "DrHibbert",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/144.jpg",
+    "isClicked": false
   },
   {
     "name": "Maggie",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/5.jpg"
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/5.jpg",
+    "isClicked": false
   },
   {
     "name": "Goof",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/128.jpg"
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/128.jpg",
+    "isClicked": false
   },
   {
-    "name": "Young Abe",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/155.jpg"
+    "name": "YoungAbe",
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/155.jpg",
+    "isClicked": false
   },
   {
     "name": "mystery",
-    "photo": "http://www.simpsonsforever.com/images/episodes/characters/72.jpg"
+    "photo": "http://www.simpsonsforever.com/images/episodes/characters/72.jpg",
+    "isClicked": false
   }
 ]

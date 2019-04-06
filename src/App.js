@@ -4,6 +4,8 @@ import './App.css';
 import Images from './components/Images';
 import Header from './components/Header';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
+
 import characters from './characters.json';
 
 // bootstrap installed via npm and not via index.html
@@ -36,13 +38,26 @@ shuffle(characters);
 
 class App extends Component {
   state = {
-    characters
+    characters,
+    score: 0
+  };
+
+  handleClick = e => {
+    this.setState({
+      score: this.state.score + 1
+    });
+
+    console.log(this.state.score);
+    if (!e.isClicked) {
+      console.log('this just fired');
+      console.log('e is', e);
+      shuffle(characters);
+      // console.log(characters);
+      // call a function that calls images
+    }
   };
 
   render() {
-    {
-      /* return jsx template */
-    }
     return (
       <div className="App">
         {/* render Header component, send props*/}
@@ -50,16 +65,23 @@ class App extends Component {
         {/* render Header component, for game intro*/}
         <Banner />
         {/* render Images component, send props */}
+
         <div className="container">
           <div className="row">
             {this.state.characters.map(character => (
-              <Images key={character.name} image={character.photo} />
+              <Images
+                key={character.name}
+                image={character.photo}
+                isClicked={character.isClicked}
+                handleClick={this.handleClick}
+              />
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     );
-    console.log(this.state.characters);
+    //console.log(this.state.characters);
   }
 }
 
