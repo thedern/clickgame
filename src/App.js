@@ -10,6 +10,7 @@ import characters from './characters.json';
 
 // bootstrap installed via npm and not via index.html
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { throws } from 'assert';
 
 // randomize characters from json
 var shuffle = function(array) {
@@ -36,6 +37,8 @@ var shuffle = function(array) {
 // call suffle array on page load
 shuffle(characters);
 
+let score = 0;
+
 class App extends Component {
   // set initial state of items
   state = {
@@ -43,18 +46,38 @@ class App extends Component {
     score: 0
   };
 
-  handleClickImg = name => {
-    // name of character clicked
-    // update score
-    console.log('character clicked', name);
-    this.setState({
-      isClicked: true,
-      score: this.state.score + 1
+  handleClickImg = (indexCaptured, name) => {
+    console.log(this.state.characters[indexCaptured]);
+
+    const characters = this.state.characters;
+    characters.map((character, index) => {
+      if (index === indexCaptured) {
+        // check if already clicked
+        if (character.isClicked === true) {
+          console.log('error, already true');
+        } else {
+          // update score somehow and update isClicked, cant next setState in setState
+          character.isClicked = true;
+          // return updated characters, this causes a warning, use componentDidUpdate or callback
+          this.setState(
+            {
+              score: this.state.score + 1,
+              characters
+              // setState uses callback below
+            },
+            () => {
+              console.log(this.state);
+            }
+          );
+        }
+        shuffle(characters);
+      }
     });
 
-    console.log('score is ', this.state.score);
+    // this no longer works
 
-    shuffle(characters);
+    console.log('character index', indexCaptured, name);
+    console.log('score is ', this.state.score);
   };
 
   render() {
@@ -68,14 +91,20 @@ class App extends Component {
 
         <div className="container">
           <div className="row">
-            {this.state.characters.map(character => (
+            {/* map characters and get index for use in updating click state */}
+            {this.state.characters.map((character, index) => (
               <Images
                 // props passed to Images
-                key={character.name}
+                name={character.name}
+                key={index}
                 image={character.photo}
                 isClicked={character.isClicked}
-                // pass in function with property name handleClickImg, bind to character object and return name
-                handleClickImg={this.handleClickImg.bind(this, character.name)}
+                // pass in function with property name handleClickImg, bind to character object's index  and name within array
+                handleClickImg={this.handleClickImg.bind(
+                  this,
+                  index,
+                  character.name
+                )}
               />
             ))}
           </div>
