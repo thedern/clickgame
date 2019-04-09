@@ -14,14 +14,15 @@ class Images extends Component {
   render() {
     // destructure (optional and must be placed in the render
     // console.log('Image props is', this.props);
-    const { name, image, isClicked } = this.props;
+    const { name, image, isClicked, index } = this.props;
     return (
       <div className="card card-body mb-3">
         <ul className="list-group">
-          <li className="list-group-item text-center" key={name}>
+          <li className="list-group-item text-center" key={index}>
             <img
               alt="character"
               src={image}
+              name={name}
               data-isClicked={isClicked}
               style={{ cursor: 'pointer' }}
               onClick={this.onClickImage}
