@@ -4,7 +4,7 @@ import Score from './Score';
 
 const Header = props => {
   // destructure (else enter: props.branding into <h3> )
-  const { branding } = props;
+  const { branding, curScore } = props;
 
   return (
     <div>
@@ -14,8 +14,8 @@ const Header = props => {
             {branding}
           </a>
           <div>
-            {/* insert score component here, will need to pass props I believe */}
-            <Score />
+            {/* insert score component here, pass curScore as props */}
+            <Score score={curScore} />
           </div>
         </div>
       </nav>

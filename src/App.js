@@ -37,31 +37,31 @@ var shuffle = function(array) {
 shuffle(characters);
 
 class App extends Component {
+  // set initial state of items
   state = {
     characters,
     score: 0
   };
 
-  handleClick = e => {
+  handleClickImg = name => {
+    // name of character clicked
+    // update score
+    console.log('character clicked', name);
     this.setState({
+      isClicked: true,
       score: this.state.score + 1
     });
 
-    console.log(this.state.score);
-    if (!e.isClicked) {
-      console.log('this just fired');
-      console.log('e is', e);
-      shuffle(characters);
-      // console.log(characters);
-      // call a function that calls images
-    }
+    console.log('score is ', this.state.score);
+
+    shuffle(characters);
   };
 
   render() {
     return (
       <div className="App">
-        {/* render Header component, send props*/}
-        <Header branding="Click Game" />
+        {/* render Header component, send props branding and score*/}
+        <Header branding="Click Game" curScore={this.state.score} />
         {/* render Header component, for game intro*/}
         <Banner />
         {/* render Images component, send props */}
@@ -70,10 +70,12 @@ class App extends Component {
           <div className="row">
             {this.state.characters.map(character => (
               <Images
+                // props passed to Images
                 key={character.name}
                 image={character.photo}
                 isClicked={character.isClicked}
-                handleClick={this.handleClick}
+                // pass in function with property name handleClickImg, bind to character object and return name
+                handleClickImg={this.handleClickImg.bind(this, character.name)}
               />
             ))}
           </div>
