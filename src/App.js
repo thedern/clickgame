@@ -55,6 +55,9 @@ class App extends Component {
         // check if already clicked
         if (character.isClicked === true) {
           console.log('error, already true');
+          this.setState({
+            score: 0
+          });
         } else {
           // update score somehow and update isClicked, cant next setState in setState
           character.isClicked = true;
