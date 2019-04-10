@@ -7,16 +7,16 @@ class Score extends Component {
     return (
       <div>
         <ul className="navbar-nav mr-auto mb-3">
-          <li className="nav-item text-danger pt-3  scores-text">
-            Current Score: {score}
-          </li>
+          {score !== 0 ? (
+            <li className="nav-item text-primary pt-3  scores-text">
+              Current Score: {score}
+            </li>
+          ) : (
+            <li className="nav-item text-danger pb-3 scores-text">
+              You clicked twice: Score: {score}
+            </li>
+          )}
         </ul>
-        {/*}
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item text-primary pb-3 scores-text">
-            Total Score:
-          </li>
-        </ul> */}
       </div>
     );
   }
