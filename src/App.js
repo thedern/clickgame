@@ -10,7 +10,6 @@ import characters from './characters.json';
 
 // bootstrap installed via npm and not via index.html
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { throws } from 'assert';
 
 // randomize characters from json
 var shuffle = function(array) {
@@ -37,13 +36,11 @@ var shuffle = function(array) {
 // call suffle array on page load
 shuffle(characters);
 
-let score = 0;
-
 class App extends Component {
   // set initial state of items
   state = {
     characters,
-    score: 0
+    score: null
   };
 
   handleClickImg = (indexCaptured, name) => {
@@ -55,9 +52,17 @@ class App extends Component {
         // check if already clicked
         if (character.isClicked === true) {
           console.log('error, already true');
-          this.setState({
-            score: 0
-          });
+          this.setState(
+            {
+              score: 0
+            },
+            () => {
+              // reload page after 1.5 seconds
+              setTimeout(function() {
+                window.location.reload();
+              }, 1500);
+            }
+          );
         } else {
           // update score somehow and update isClicked, cant next setState in setState
           character.isClicked = true;
@@ -72,8 +77,8 @@ class App extends Component {
               console.log(this.state);
             }
           );
+          shuffle(characters);
         }
-        shuffle(characters);
       }
     });
 
